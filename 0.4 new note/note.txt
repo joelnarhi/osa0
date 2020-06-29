@@ -1,0 +1,17 @@
+note over browser : 
+User types a message and clicks submit
+end note
+browser -> server: HTTP POST https://fulstac-exampleapp.herokuapp.com/new_note
+server --> browser: HTTP status code 302
+note over server:
+server returns a redirect to /notes
+end note
+browser -> server: HTTP GET https://fulstac-exampleapp.herokuapp.com/notes
+note over browser :
+Page load requests main.css and main.js files
+end note
+server --> browser: HTTP code
+browser -> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js
